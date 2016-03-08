@@ -25,8 +25,11 @@
         <module name="ANN_DevOps" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ANN_DevOps" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="ANN_DevOps" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="RmicSettings">
+    <option name="IS_EANABLED" value="true" />
   </component>
 </project>
