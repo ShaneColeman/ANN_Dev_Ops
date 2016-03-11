@@ -13,6 +13,7 @@ public class ANNDataSetSetupTest {
     @org.junit.Test
     public void testSetColumnNames() throws Exception
     {
+        //setColumnNames Unit Test Method
         DataSet data = DataSet.createFromFile("C:\\Users\\Windows\\Desktop\\TestingDataSet50.txt", 8, 4, "\t", false);
 
         ANNDataSetSetup ann = new ANNDataSetSetup();
