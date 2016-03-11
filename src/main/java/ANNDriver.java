@@ -22,10 +22,10 @@ public class ANNDriver {
         //nNC.trainedMLPDataSetTrain();
         //nNC.savedMLPDataSetTest();
 
-        //nNC.trainedMLPDSTrainFile();
+        nNC.trainedMLPDSTrainFile();
         //nNC.savedMLPDSTestFile();
 
-        nNC.trainedMLPBDSTrainFile();
+        //nNC.trainedMLPBDSTrainFile();
         //nNC.savedMLPBDSTestFile();
     }
 }
