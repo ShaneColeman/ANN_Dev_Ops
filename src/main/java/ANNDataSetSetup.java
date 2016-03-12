@@ -40,7 +40,23 @@ public class ANNDataSetSetup
         try
         {
             //Training Data Set
-            dataSetTrainingCreation();
+            //dataSetTrainingCreation();
+
+            int inputs = 8;
+            int outputs = 4;
+
+            dataTrain = new DataSetTrain(inputs,outputs);
+            //dataTrain.setNumberOfInputs(inputs);
+            //dataTrain.setNumberOfOutputs(outputs);
+
+            dataTrain.addTrainingDataSetRow(new double[]{0.160931174, 0.486666667, 0.2, 0, 0, 0.35, 0.363636364, 0},
+                    new double[]{0, 0, 1, 0});
+            dataTrain.addTrainingDataSetRow(new double[]{0.237854251, 0.733333333, 0.6, 0, 1, 0.025, 0.818181818, 0.428571429},
+                    new double[]{0, 0, 0, 1});
+            dataTrain.addTrainingDataSetRow(new double[]{0.208502024, 0.466666667, 0.3, 0, 1, 0.3, 1, 0},
+                    new double[]{0, 0, 1, 0});
+            dataTrain.addTrainingDataSetRow(new double[]{0.19534413, 0.6, 0.3, 0, 1, 0.3, 0.727272727, 0},
+                    new double[]{0, 0, 1, 0});
 
             //Set Data Set Attribute Column Names
             setColumnNames(dataTrain.getTrainingDataSet());
@@ -468,7 +484,7 @@ public class ANNDataSetSetup
 
     public void setColumnNames(DataSet dataSet)
     {
-        final int COLUMN_SIZE = (dataSet.getInputSize() - dataSet.getOutputSize());
+        final int COLUMN_SIZE = (dataSet.getInputSize() + dataSet.getOutputSize());
 
         String[] columnNames = new String[COLUMN_SIZE];
 

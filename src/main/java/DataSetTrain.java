@@ -17,13 +17,13 @@ import org.neuroph.core.data.DataSetRow;
  *
  * @author Windows
  */
-public class DataSetTrain extends DataSetANN
+public class DataSetTrain
 {
     private DataSet train;
-    //private int inputs;
-    //private int outputs;
+    private int inputs;
+    private int outputs;
+    private int totalInputsOutputs;
 
-    /*
     public DataSetTrain()
     {
         setNumberOfInputs(0);
@@ -31,8 +31,8 @@ public class DataSetTrain extends DataSetANN
 
         train = new DataSet(getNumberOfInputs(),getNumberOfOutputs());
     }
-    */
 
+    /*
     public DataSetTrain(int inputs, int outputs)
     {
         super(inputs, outputs);
@@ -44,14 +44,27 @@ public class DataSetTrain extends DataSetANN
 
         train = new DataSet(inputs, outputs);
     }
+    */
 
-    @Override
+    public DataSetTrain(int inputs, int outputs)
+    {
+
+        setNumberOfInputs(inputs);
+        setNumberOfOutputs(outputs);
+
+        train = new DataSet(getNumberOfInputs(),getNumberOfOutputs());
+
+        setTotalInputsOutputs(inputs,outputs);
+        System.out.println("Total: " + getTotalInputsOutputs() + "\n");
+    }
+
+
     public void addTrainingDataSetRow(double[] inputs, double[] outputs)
     {
         train.addRow(new DataSetRow(inputs,outputs));
     }
 
-    @Override
+
     public void addDataSetRow(DataSetRow dataSetRow)
     {
         train.addRow(dataSetRow);
@@ -88,7 +101,7 @@ public class DataSetTrain extends DataSetANN
     }
 
     //Unused Code
-    /*
+
     public void setNumberOfInputs(int inputs)
     {
         this.inputs = inputs;
@@ -111,7 +124,17 @@ public class DataSetTrain extends DataSetANN
     {
         return outputs;
     }
-    */
+
+    public void setTotalInputsOutputs(int inputs, int outputs)
+    {
+        totalInputsOutputs = inputs + outputs;
+    }
+
+    public int getTotalInputsOutputs()
+    {
+        return totalInputsOutputs;
+    }
+
 
 }
 

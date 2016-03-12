@@ -20,6 +20,15 @@ public abstract class DataSetANN
     private int outputs;
     //private DataSet dataSet;
 
+    /*
+    public DataSetANN()
+    {
+        this.inputs = 0;
+        this.outputs = 0;
+    }
+    */
+
+
     public DataSetANN(int inputs, int outputs)
     {
         this.inputs = inputs;
@@ -46,5 +55,7 @@ public abstract class DataSetANN
     public void addDataSetRow(DataSetRow dataSetRow){};
 
     //public DataSet getDataSet(){return dataSet;}
+
+    public int getTotalNeurons(){return inputs + outputs;}
 
 }
