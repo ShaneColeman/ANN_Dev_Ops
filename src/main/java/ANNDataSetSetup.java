@@ -468,7 +468,7 @@ public class ANNDataSetSetup
 
     public void setColumnNames(DataSet dataSet)
     {
-        final int COLUMN_SIZE = (dataSet.getInputSize() + dataSet.getOutputSize());
+        final int COLUMN_SIZE = (dataSet.getInputSize() - dataSet.getOutputSize());
 
         String[] columnNames = new String[COLUMN_SIZE];
 
