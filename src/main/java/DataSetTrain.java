@@ -54,8 +54,8 @@ public class DataSetTrain
 
         train = new DataSet(getNumberOfInputs(),getNumberOfOutputs());
 
-        setTotalInputsOutputs(inputs,outputs);
-        System.out.println("Total: " + getTotalInputsOutputs() + "\n");
+        //setTotalInputsOutputs(inputs,outputs);
+        //System.out.println("Total: " + getTotalInputsOutputs() + "\n");
     }
 
 
@@ -125,10 +125,12 @@ public class DataSetTrain
         return outputs;
     }
 
+
     public void setTotalInputsOutputs(int inputs, int outputs)
     {
-        totalInputsOutputs = inputs + outputs;
+        totalInputsOutputs = inputs - outputs;
     }
+
 
     public int getTotalInputsOutputs()
     {

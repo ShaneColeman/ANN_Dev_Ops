@@ -7,7 +7,15 @@
  * and open the template in the editor.
  */
 
+import org.neuroph.core.NeuralNetwork;
+import org.neuroph.core.data.DataSet;
+import org.neuroph.core.data.DataSetRow;
+import org.neuroph.nnet.learning.MomentumBackpropagation;
+import org.neuroph.util.TransferFunctionType;
+
 import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  *
@@ -18,7 +26,7 @@ public class ANNDriver {
     public static void main(String[] args) throws FileNotFoundException
     {
         //ANNDataSetSetUp
-        ANNDataSetSetup nNC = new ANNDataSetSetup();
+        //ANNDataSetSetup nNC = new ANNDataSetSetup();
 
         //nNC.trainedMLPDataSetTrain();
         //nNC.savedMLPDataSetTest();
@@ -26,13 +34,13 @@ public class ANNDriver {
         //nNC.trainedMLPDSTrainFile();
         //nNC.savedMLPDSTestFile();
 
-        nNC.trainedMLPBDSTrainFile();
+        //nNC.trainedMLPBDSTrainFile();
         //nNC.savedMLPBDSTestFile();
 
 
 
         //Test Code - Can Remove
-        /*
+
         DataSetTrain dataTrain;
         DataSetTest dataTest;
 
@@ -41,8 +49,12 @@ public class ANNDriver {
 
         //Training Data Set
         //dataSetTrainingCreation();
+        int inputs = 8;
+        int outputs = 4;
 
-        dataTrain = new DataSetTrain(8,4);
+        dataTrain = new DataSetTrain();
+        dataTrain.setNumberOfInputs(inputs);
+        dataTrain.setNumberOfOutputs(outputs);
 
         dataTrain.addTrainingDataSetRow(new double[]{0.160931174, 0.486666667, 0.2, 0, 0, 0.35, 0.363636364, 0},
                 new double[]{0, 0, 1, 0});
@@ -52,6 +64,13 @@ public class ANNDriver {
                 new double[]{0, 0, 1, 0});
         dataTrain.addTrainingDataSetRow(new double[]{0.19534413, 0.6, 0.3, 0, 1, 0.3, 0.727272727, 0},
                 new double[]{0, 0, 1, 0});
+
+        int inputsNum = dataTrain.getNumberOfInputs();
+        int outputsNum = dataTrain.getNumberOfOutputs();
+        System.out.println("Inputs: " + inputsNum + "\nOutputs: " + outputsNum);
+
+        dataTrain.setTotalInputsOutputs(inputs,outputs);
+        System.out.println("Inputs / Outputs: " + dataTrain.getTotalInputsOutputs());
 
         //Set Data Set Attribute Column Names
         //setColumnNames(dataTrain.getTrainingDataSet());
@@ -100,11 +119,11 @@ public class ANNDriver {
         //Save Neural Network
         mlp1.saveNeuralNetwork("mlp1_sig_8_6_4.nnet");
         System.out.println("\nMulti-Layer Perceptron A.N.N. (Sigmoid, 8, 6, 4) saved");
-        */
+
     }
 
         //Test Method - Can Remove
-        /*
+
         public static void testANN(NeuralNetwork aNN, DataSet dataSet)
         {
             Iterator<DataSetRow> it = dataSet.getRows().iterator();
@@ -126,6 +145,6 @@ public class ANNDriver {
 
             //System.out.println("\nTotal Network Error: " + mSE.getTotalError());
         }
-        */
+
     }
 
