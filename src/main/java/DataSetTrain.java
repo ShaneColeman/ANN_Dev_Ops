@@ -128,7 +128,7 @@ public class DataSetTrain
 
     public void setTotalInputsOutputs(int inputs, int outputs)
     {
-        totalInputsOutputs = inputs - outputs;
+        totalInputsOutputs = inputs + outputs;
     }
 
 
