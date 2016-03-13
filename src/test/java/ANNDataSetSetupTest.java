@@ -20,8 +20,8 @@ public class ANNDataSetSetupTest {
 
         ann.setColumnNames(data);
 
-        int expected = 4;
-        int actual = 4;
+        int expected = 12;
+        int actual = 12;
 
         Assert.assertEquals(expected,actual);
         //Assert.assertSame(expected,actual);
